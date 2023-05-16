@@ -14,32 +14,12 @@ const Reservations = () => {
     }
   }, [isLoggedIn, navigate]);
 
-  // const sortReservations = (a, b) => {
-  //   const dateA = new Date(a.date);
-  //   const dateB = new Date(b.date);
-
-  //   let hoursA = Number(a.hour.replace(/(^\d+)(.+$)/i, '$1'));
-  //   let hoursB = Number(b.hour.replace(/(^\d+)(.+$)/i, '$1'));
-
-  //   if (a.hour.includes('pm')) {
-  //     hoursA += 12;
-  //   }
-
-  //   if (b.hour.includes('pm')) {
-  //     hoursB += 12;
-  //   }
-
-  //   dateA.setHours(hoursA);
-  //   dateB.setHours(hoursB);
-
-  //   return dateA - dateB;
-  // };
-
+  
   const reservations = useSelector((state) => state.users.reservations);
   const twowheelers = useSelector((state) => state.twowheelers.twowheelers);
 
   if (isLoggedIn) {
-    // reservations = reservations.sort(sortReservations);
+    
     return (
       <section className="reservations-page">
         <h1>My reservations</h1>
@@ -48,11 +28,11 @@ const Reservations = () => {
             <p className="next-session-info">
               Your Test Drive is on
               {' '}
-              {((new Date(reservations[0].date_of_reservation)).toUTCString()).substring(0, 16)}
+              {((new Date(reservations[0].date)).toUTCString()).substring(0, 16)}
               {' '}
               at
               {' '}
-              {reservations[0].duration_of_test_drive}
+              {reservations[0].hour}
               {' '}
               in
               {' '}
@@ -77,8 +57,8 @@ const Reservations = () => {
                       {twowheelers.find((twowheeler) => twowheeler.id === item.twowheeler_id).name}
                     </td>
                     <td>{item.city}</td>
-                    <td>{item.duration_of_test_drive}</td>
-                    <td>{item.date_of_reservation}</td>
+                    <td>{item.hour}</td>
+                    <td>{item.date}</td>
                   </tr>
                 ))}
               </tbody>

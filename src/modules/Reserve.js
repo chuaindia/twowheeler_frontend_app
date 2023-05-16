@@ -80,7 +80,7 @@ const Reserve = () => {
       return;
     }
     dispatch(fetchReservation({
-      city, duration_of_test_drive: hour, date_of_reservation: dateres, twowheeler_id: twowheelerId, user_id: user.id,
+      city, hour, date: dateres, twowheeler_id: twowheelerId, user_id: user.id,
     }));
   };
 
