@@ -21,7 +21,7 @@ const Login = () => {
       setValidDisplayState(true);
       setExistState(false);
     } else {
-      dispatch(userSession({ name: usernameState }, 'login'));
+      dispatch(userSession({ username: usernameState }, 'login'));
     }
   };
 
@@ -39,12 +39,12 @@ const Login = () => {
     if (userData.logged_in === true) {
       setExistState(false);
       localStorage.setItem('logged_in', true);
-      localStorage.setItem('user', userData.user.name);
+      localStorage.setItem('user', userData.user.username);
     }
     if (localStorage.getItem('logged_in') === 'true') {
       const user = localStorage.getItem('user');
       if (!userData) {
-        dispatch(userSession({ name: user }, 'login'));
+        dispatch(userSession({ username: user }, 'login'));
       }
       redirection('/');
     }

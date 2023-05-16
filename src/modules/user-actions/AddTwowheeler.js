@@ -186,7 +186,7 @@ const AddTwowheeler = () => {
             )}
 
             {errors.fuel_type && (
-              <li className="errorMsg">{errors.twitter_link.message}</li>
+              <li className="errorMsg">{errors.fuel_type.message}</li>
             )}
 
           </ul>

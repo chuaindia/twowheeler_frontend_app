@@ -45,7 +45,7 @@ const Signup = () => {
     if (userData.logged_in === true) {
       setExistState(false);
       localStorage.setItem('logged_in', true);
-      localStorage.setItem('user', userData.user.name);
+      localStorage.setItem('user', userData.user.username);
     }
     if (localStorage.getItem('logged_in') === 'true') {
       const user = localStorage.getItem('user');
