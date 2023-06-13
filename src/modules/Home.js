@@ -25,7 +25,7 @@ const Home = () => {
         <div className="no-items-available">
           <div> There are no twowheelers currently available</div>
           {isLoggedIn && (
-            <Link to="/add_twowheeler">
+            <Link to="/AddTwowheeler">
               {' '}
               <button type="button">Add a twowheeler now!</button>
             </Link>

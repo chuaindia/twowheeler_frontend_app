@@ -54,23 +54,28 @@ const Reserve = () => {
   }
 
   const hours = [
-    '1',
-    '2',
+    '30 minutes',
+    '35 minutes',
+    '40 minutes',
+    '45 minutes',
+    '50 minutes',
+    '55 minutes',
+    '1 hour',
   ];
 
   const cities = [
-    'Tokyo',
-    'Paris',
-    'Algiers',
-    'London',
-    'Milan',
-    'Toronto',
-    'California',
-    'Cairo',
-    'New York',
-    'Moscow',
-    'Madrid',
-    'Dubai',
+    'Delhi',
+    'Mumbai',
+    'Kolkata',
+    'Chennai',
+    'Bangalore',
+    'Bhubaneswar',
+    'Hyderabad',
+    'Agartala',
+    'Siliguri',
+    'Ahmedabad',
+    'Pune',
+    'Ranchi',
   ];
 
   const handleSubmit = (e) => {
